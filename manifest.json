@@ -1,0 +1,39 @@
+{
+	"manifest_version": 2,
+	"name": "Web Tools",
+	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+vUHL61uBTiwO51y9xc5+AU0qGnDDDTa3xiuVkOLmEivnIvx1j1nZ38NOF3H5dSgc7JZrvw9xq/hvct4WlzRzMDXABOcrKbigqhBfoPvufWyAPSX4Zz8s5PTOnDCxuIm5yW65LH6igjMj2zOi9K4/QT6MoZJmalvdOPLFGQvLwQIDAQAB",
+	"version": "1.0",
+	"description": "工具集合",
+	"icons": {
+		"16": "icon/16.png",
+		"128": "icon/128.png"
+	},
+	"browser_action": {
+		"default_title": "Web Tools",
+		"default_icon": "icon/128.png",
+		"default_popup": "popup/popup.html"
+	},
+	"content_scripts": [{
+		"css": ["content/content.css"],
+		"js": ["lib/template.js", "lib/jquery.min.js", "content/content.js"],
+		"all_frames": false,
+		"matches": ["http://*/*", "https://*/*"],
+		"run_at": "document_end"
+	}],
+	"chrome_url_overrides": {
+		"newtab": "newtab/newtab.html"
+	},
+	"background": {
+		"page": "background/background.html"
+	},
+	"options_page": "options/options.html",
+	"web_accessible_resources": ["*"],
+	"permissions": [
+		"*://*/*",
+		"cookies",
+		"tabs",
+		"contextMenus",
+		"webRequestBlocking",
+		"webRequest"
+	]
+}
