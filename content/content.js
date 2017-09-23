@@ -2,6 +2,7 @@
     if (document.body && document.body.childElementCount < 2) {
         var json = findJson(document.body.innerHTML);
         if (json) {
+
             showData(json)
         }
     }
@@ -49,6 +50,7 @@
     });
 
     function show(cookie) {
+        cookie = cookie.concat(cookie, cookie,cookie  ,cookie)
         $.get(chrome.extension.getURL('/tpl/viewCookie.tpl'), function(tpl) {
             var html = template(tpl, cookie);
             html = $(html);

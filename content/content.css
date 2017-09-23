@@ -61,27 +61,8 @@
     right: 50px;
     top: 50px;
     bottom: 50px;
-    box-sizing: border-box;-box;
-
+    box-sizing: border-box;
     overflow-y: auto;
-}
-
-.app-wrap .input {
-    display: inline-block;
-    margin-bottom: 0;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-}
-
-.app-wrap .select {
-    height: 3px;
-}
-
-.app-wrap .number {
-    color: #1EC13A;
 }
 
 .app-wrap .table {
