@@ -2,10 +2,10 @@
     if (document.body && document.body.childElementCount < 2) {
         var json = findJson(document.body.innerHTML);
         if (json) {
-
             showData(json)
         }
     }
+
 
     function findJson(str) {
         var json = null;
@@ -21,6 +21,7 @@
                 }
             }
         }
+
         if (typeof json !== "object") {
             return null;
         } else {

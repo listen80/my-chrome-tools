@@ -135,27 +135,27 @@
     font-family: Arial;
 }
 .json-wrap .symbol {
-    color: #01b001;
+    color: rgb(167, 37, 216);
     font-weight: 700;
 }
 .json-wrap .colon {
-    color: #70910f;
+    color: #acd33a;
     font-weight: 700;
 }
 .json-wrap .key {
-    color: #fc6868;
+    color: #ff3e3e;
 }
 .json-wrap .undefined {
     color: #03ffff;
 }
 .json-wrap .null {
-    color: #08afff;
+    color: #03ffff;
 }
 .json-wrap .string {
     color: #00afff;
 }
 .json-wrap .number {
-    color: #2cff47;
+    color: rgb(243, 128, 30);
 }
 .json-wrap .boolean {
     color: #d53aff
