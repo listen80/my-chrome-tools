@@ -2,8 +2,8 @@
 	<div class="content">
 		<table class="table">
 			<colgroup span="2" align="left"></colgroup>
-			<colgroup span="2" align="right" style="color:#0000FF;"></colgroup>
-			<colgroup align="right" style="color:#00F0FF;" width="200"></colgroup>
+			<colgroup span="2" align="right"></colgroup>
+			<colgroup align="right" width="200"></colgroup>
 			<thead>
 				<tr>
 					<th>#</th>
