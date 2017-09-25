@@ -6,7 +6,6 @@
         }
     }
 
-
     function findJson(str) {
         var json = null;
         if (str) {
@@ -31,8 +30,7 @@
 
     function showData(json) {
         $.get(chrome.extension.getURL('/tpl/viewJson.tpl'), function(tpl) {
-            $('<script type="text/tpl">').attr('id', 'viewJson2017').html(tpl).appendTo('body');
-            var html = '<div class="json-wrap"><div class="line">' + template('viewJson2017', json) + '</div></div>';
+            var html = '<div class="json-wrap"><div class="line">' + ltpl(tpl, 'viewJson')(json) + '</div></div>';
             $('body').html(html);
             $('.expand, .dot').on('click', function() {
                 $(this).parent().toggleClass('close')
@@ -51,10 +49,8 @@
     });
 
     function show(cookie) {
-        cookie = cookie.concat(cookie, cookie,cookie  ,cookie)
         $.get(chrome.extension.getURL('/tpl/viewCookie.tpl'), function(tpl) {
-            var html = template(tpl, cookie);
-            html = $(html);
+            var html = $(ltpl(tpl)(cookie));
             html.on('click', function(e) {
                 html.remove();
                 $('body').removeClass('over-hidden');
@@ -72,6 +68,7 @@
 ~ function() {
 
     return;
+
     function getWord() {
         var sel = window.getSelection();
         if (sel.type === 'Range') {

@@ -4,11 +4,11 @@
 <span class="undefined">undefined</span>
 {{elseif $d.constructor === Object || $d.constructor === Array}}
 <span class="symbol">{{$d.constructor === Object ? '{' : '['}}</span>{{if Object.keys($d).length}}<span class="expand"></span><div class="indent">
-  {{for $d $v $k $i}}
-  <div class="line">
-      <span class="key">{{$k}}</span><span class="colon">:</span>{{include "viewJson2017" $v}}
-  </div>
-  {{/for}}
+	{{for $d}}
+	<div class="line">
+		<span class="key">{{$k}}</span><span class="colon">:</span>{{include "viewJson" $v}}
+	</div>
+	{{/for}}
 </div>{{/if}}<span class="dot">...</span><span class="symbol">{{$d.constructor === Object ? '}' : ']'}}</span>
 {{elseif $d.constructor === String}}
 <span class="string">"{{$d}}"</span>
