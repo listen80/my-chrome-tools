@@ -1,8 +1,11 @@
 ~ function() {
-    if (document.body && document.body.childElementCount < 2) {
-        var json = findJson(document.body.innerHTML);
-        if (json) {
-            showData(json)
+    if (document.body) {
+        var pre = document.body.getElementsByTagName('pre')[0];
+        if(pre && pre.parentNode === document.body) {
+            var json = findJson(pre.innerHTML);
+            if (json) {
+                showData(json)
+            }
         }
     }
 
@@ -31,7 +34,7 @@
     function showData(json) {
         $.get(chrome.extension.getURL('/tpl/viewJson.tpl'), function(tpl) {
             var html = '<div class="json-wrap"><div class="line">' + ltpl(tpl, 'viewJson')(json) + '</div></div>';
-            $('body').html(html);
+            $('body').html($(html));
             $('.expand, .dot').on('click', function() {
                 $(this).parent().toggleClass('close')
             });

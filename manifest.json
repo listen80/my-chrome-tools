@@ -2,7 +2,6 @@
 	"manifest_version": 2,
 	"name": "Web Tools",
 	"version": "1.0",
-	"description": "工具集合",
 	"icons": {
 		"16": "icon/16.png",
 		"128": "icon/128.png"
