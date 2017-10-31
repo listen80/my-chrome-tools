@@ -1,4 +1,4 @@
-::-webkit-scrollbar-thumb {
+/*::-webkit-scrollbar-thumb {
     background-color: #239EF8;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -36,7 +36,7 @@
 ::selection {
     color: white;
     background: rgb(15, 168, 244);
-}
+}*/
 
 .over-hidden {
     overflow: hidden;
