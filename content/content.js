@@ -1,50 +1,15 @@
 ~ function() {
-    if (document.body) {
-        var pre = document.body.getElementsByTagName('pre')[0];
-        if(pre && pre.parentNode === document.body) {
-            var json = findJson(pre.innerHTML);
-            if (json) {
-                showData(json)
-            }
+    if(document.body && document.body.childElementCount < 2) {
+        var json = findJson(document.body.innerHTML);
+        if (json) {
+            showData(json, function(el) {
+                $('body').empty().append(el)
+            })
         }
     }
-
-    function findJson(str) {
-        var json = null;
-        if (str) {
-            try {
-                json = JSON.parse(str);
-            } catch (e) {
-                str = /{[\w\W]+}/.exec(str);
-                if (str) {
-                    try {
-                        json = JSON.parse(str[0])
-                    } catch (e) {}
-                }
-            }
-        }
-
-        if (typeof json !== "object") {
-            return null;
-        } else {
-            return json;
-        }
-    }
-
-    function showData(json) {
-        $.get(chrome.extension.getURL('/tpl/viewJson.tpl'), function(tpl) {
-            var html = '<div class="json-wrap"><div class="line">' + ltpl(tpl, 'viewJson')(json) + '</div></div>';
-            $('body').html($(html));
-            $('.expand, .dot').on('click', function() {
-                $(this).parent().toggleClass('close')
-            });
-        })
-    }
-
 }();
 
 ~ function() {
-
     chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         if (request.act === 'showCookie') {
             show(request.cookie)
@@ -53,9 +18,9 @@
 
     function show(cookie) {
         $.get(chrome.extension.getURL('/tpl/viewCookie.tpl'), function(tpl) {
-            var html = $(ltpl(tpl)(cookie));
-            html.on('click', function(e) {
-                html.remove();
+            var html = leaf(tpl)(cookie);
+            var el = $(html).on('click', function(e) {
+                el.remove();
                 $('body').removeClass('over-hidden');
                 return false;
             }).on('click', 'table', function(e) {
@@ -63,15 +28,13 @@
             }).on('wheel', function(e) {
                 e.stopPropagation();
             })
-            $('body').append(html).addClass('over-hidden');
+            $('body').append(el).addClass('over-hidden');
         })
     }
 }();
 
 ~ function() {
-
     return;
-
     function getWord() {
         var sel = window.getSelection();
         if (sel.type === 'Range') {

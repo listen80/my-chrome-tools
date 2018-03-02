@@ -14,23 +14,23 @@
 				</tr>
 			</thead>
 			<tbody>
-				{{if $d.length}}
-				{{for $d}}
+				{if $d.length}
+				{for $d}
 				<tr>
-					<td>{{$k + 1}}</td>
-					<td>{{$v.name}}</td>
+					<td>{$k + 1}</td>
+					<td>{$v.name}</td>
 					<td>
-						<div style="word-break: break-all;">{{decodeURIComponent($v.value)}}</div>
+						<div style="word-break: break-all;">{decodeURIComponent($v.value)}</div>
 					</td>
-					<td><span>{{$v.domain}}</span></td>
-					<td>{{if $v.session}}Session{{else}}{{new Date($v.expirationDate * 1000).toLocaleString()}}{{/if}}</td>
+					<td><span>{$v.domain}</span></td>
+					<td>{if $v.session}Session{else}{new Date($v.expirationDate * 1000).toLocaleString()}{/if}</td>
 				</tr>
-				{{/for}}
-				{{else}}
+				{/for}
+				{else}
 				<tr>
 					<td colspan="5" style="text-align: center">暂无</td>
 				</tr>
-				{{/if}}
+				{/if}
 			</tbody>
 		</table>
 	</div>

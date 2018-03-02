@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>New tab</title>
+	<script src="../lib/jquery.min.js"></script>
 	<script src="newtab.js"></script>
 	<style>
 		html {
@@ -66,13 +67,13 @@
 <body>
 	<div class="wrap">
 		<div class="content">
-			<div id="baidu" class="item">
-				<div class="img"><a href="https://www.baidu.com"><img src="baidu.png" alt=""></a></div>
-				<input type="text" class="ipt_search" role="input"><input type="button" class="ipt_click" value="百度一下" role="click">
+			<div class="item" url="https://www.baidu.com/s?wd=">
+				<div class="img"><a href="https://www.baidu.com"><img src="baidu.png"></a></div>
+				<input type="text" class="ipt_search"><input type="button" class="ipt_click" value="百度一下">
 			</div>
-			<div id="google" class="item">
-				<div class="img"><a href="https://www.google.com.hk"><img src="google.jpg" alt=""></a></div>
-				<input type="text" class="ipt_search" role="input"><input type="button" class="ipt_click" value="Google一下" role="click">
+			<div class="item" url="https://www.google.com.hk/#q=">
+				<div class="img"><a href="https://www.google.com.hk"><img src="google.jpg"></a></div>
+				<input type="text" class="ipt_search"><input type="button" class="ipt_click" value="Google一下">
 			</div>
 		</div>
 	</div>
