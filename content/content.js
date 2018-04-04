@@ -59,3 +59,48 @@
         word && window.open('https://www.baidu.com/s?ie=UTF-8&wd=' + word)
     })
 }();
+
+~ function() {
+
+    let div = $('<div>').hide()
+    let sel = []
+
+    sel.push('[id^=ad]')
+
+    // http://tech.ifeng.com/a/20170720/44653845_0.shtml?_zbs_baidu_bk
+    sel.push('#rightCoupletId', '#leftCoupletId')
+
+    // https://baike.baidu.com/item/%E8%85%BE%E8%AE%AF/112204?fr=aladdin#reference-[6]-1591-wrap
+    sel.push('.right-ad')
+
+    // http://www.zol.com.cn/
+    sel.push('.gmine_ad', '.zmall-ad-1000')
+
+    // http://www.ygdy8.com/
+    sel.push('body > a[href^=http]', 'body > [id^=cs_]')
+
+    function clear() {
+        $.each(sel, function(index, selector) {
+            let els = $(selector);
+            if(els.length > 0) {
+                console.log(els.selector)
+                div.append(els)
+                // els.hide();
+            }
+        })
+
+        // $('span[data-tuiguang]').each((index, selector) => {
+        //     $(selector).closest('div[id]').appendTo(div)
+        // })
+    }
+    setTimeout(clear, 0)
+    setTimeout(clear, 15)
+    setTimeout(clear, 30)
+    setTimeout(clear, 50)
+    setTimeout(clear, 100)
+    setTimeout(clear, 200)
+    setTimeout(clear, 500)
+    setTimeout(clear, 1000)
+    setTimeout(clear, 2000)
+    setTimeout(clear, 3000)
+}();
