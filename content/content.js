@@ -1,12 +1,13 @@
 ~ function() {
     if(document.body && document.body.childElementCount < 2) {
-        var json = findJson(document.body.innerHTML);
+        var json = findJson(document.body.innerText);
         if (json) {
             showData(json, function(el) {
                 $('body').empty().append(el)
             })
         }
     }
+
 }();
 
 ~ function() {
@@ -30,6 +31,7 @@
             })
             $('body').append(el).addClass('over-hidden');
         })
+
     }
 }();
 
