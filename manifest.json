@@ -8,8 +8,7 @@
 	},
 	"browser_action": {
 		"default_title": "Web Tools",
-		"default_icon": "icon/128.png",
-		"default_popup": "popup/popup.html"
+		"default_icon": "icon/128.png"
 	},
 	"content_scripts": [{
 		"css": ["content/content.css"],
@@ -25,7 +24,6 @@
 		"page": "background/background.html"
 	},
 	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+vUHL61uBTiwO51y9xc5+AU0qGnDDDTa3xiuVkOLmEivnIvx1j1nZ38NOF3H5dSgc7JZrvw9xq/hvct4WlzRzMDXABOcrKbigqhBfoPvufWyAPSX4Zz8s5PTOnDCxuIm5yW65LH6igjMj2zOi9K4/QT6MoZJmalvdOPLFGQvLwQIDAQAB",
-	"options_page": "options/options.html",
 	"web_accessible_resources": ["*"],
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 	"permissions": ["*://*/*", "cookies", "tabs", "contextMenus", "webRequestBlocking", "webRequest"]

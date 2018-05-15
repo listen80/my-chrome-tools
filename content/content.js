@@ -64,10 +64,10 @@
 
 ~ function() {
 
-    let div = $('<div>').hide()
+    let hide = $('<div>').hide()
     let sel = []
 
-    sel.push('[id^=ad]')
+    sel.push('[id^=ad_]')
 
     // http://tech.ifeng.com/a/20170720/44653845_0.shtml?_zbs_baidu_bk
     sel.push('#rightCoupletId', '#leftCoupletId')
@@ -81,19 +81,25 @@
     // http://www.ygdy8.com/
     sel.push('body > a[href^=http]', 'body > [id^=cs_]')
 
+    sel.push('#content_left .EC_newppim')
+
     function clear() {
         $.each(sel, function(index, selector) {
             let els = $(selector);
             if(els.length > 0) {
-                console.log(els.selector)
-                div.append(els)
-                // els.hide();
+                hide.append(els)
             }
         })
 
-        // $('span[data-tuiguang]').each((index, selector) => {
-        //     $(selector).closest('div[id]').appendTo(div)
-        // })
+        $('span').each(function () {
+            if(~$(this).text().indexOf('广告')) {
+                var div = $(this).closest('div[id]')
+                if(!isNaN(div.attr('id'))) {
+                    div.html('')
+                    hide.appendTo(div)
+                }
+            }
+        })
     }
     setTimeout(clear, 0)
     setTimeout(clear, 15)
@@ -105,4 +111,6 @@
     setTimeout(clear, 1000)
     setTimeout(clear, 2000)
     setTimeout(clear, 3000)
+    setTimeout(clear, 5000)
+    setTimeout(clear, 6000)
 }();
