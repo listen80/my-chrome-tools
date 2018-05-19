@@ -83,6 +83,8 @@
 
     sel.push('#content_left .EC_newppim')
 
+    sel.push('#midbanner', '#lovexin12', '#lovexin14')
+    
     function clear() {
         $.each(sel, function(index, selector) {
             let els = $(selector);
@@ -101,6 +103,7 @@
             }
         })
     }
+    clear()
     setTimeout(clear, 0)
     setTimeout(clear, 15)
     setTimeout(clear, 30)
