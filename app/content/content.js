@@ -150,6 +150,9 @@
 
 ~ function() {
 
+  if(document.domain === 'localhost' || document.domain.indexOf('oa.com')) {
+    return
+  }
   let hide = $('<div>').hide()
   let sel = []
 
@@ -189,7 +192,6 @@
       }
     })
   }
-  clear()
   setTimeout(clear, 0)
   setTimeout(clear, 15)
   setTimeout(clear, 30)
