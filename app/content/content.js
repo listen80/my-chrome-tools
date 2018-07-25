@@ -150,10 +150,11 @@
 
 ~ function() {
 
-  if(document.domain === 'localhost' || document.domain.indexOf('oa.com')) {
+  if(document.domain === 'localhost' || ~document.domain.indexOf('oa.com')) {
     return
   }
   let hide = $('<div>').hide()
+  $('body').append(hide)
   let sel = []
 
   sel.push('[id^=ad_]')
@@ -173,6 +174,9 @@
   sel.push('#content_left .EC_newppim')
 
   sel.push('#midbanner', '#lovexin12', '#lovexin14')
+
+  // baidu
+  sel.push('#content_left>.EC_result[id]')
 
   function clear() {
     $.each(sel, function(index, selector) {
