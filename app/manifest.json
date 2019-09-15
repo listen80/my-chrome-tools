@@ -2,25 +2,30 @@
   "manifest_version": 2,
   "name": "Web Tools",
   "version": "1.0",
-  "icons": {
+  "icons":
+  {
     "16": "icon/16.png",
     "128": "icon/128.png"
   },
-  "browser_action": {
+  "browser_action":
+  {
     "default_title": "Web Tools",
     "default_icon": "icon/128.png"
   },
-  "content_scripts": [{
+  "content_scripts": [
+  {
     "css": ["content/content.css"],
-    "js": ["lib/leaf.js", "lib/jquery.min.js", "content/content.js"],
+    "js": ["lib/leaf.js", "lib/jquery.min.js", "content/ads_killer.js", "content/cookie.js", "content/json.js"],
     "all_frames": false,
     "matches": ["http://*/*", "https://*/*"],
     "run_at": "document_end"
   }],
-  "chrome_url_overrides": {
+  "chrome_url_overrides":
+  {
     "newtab": "newtab/newtab.html"
   },
-  "background": {
+  "background":
+  {
     "scripts": ["background/background.js"]
   },
   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+vUHL61uBTiwO51y9xc5+AU0qGnDDDTa3xiuVkOLmEivnIvx1j1nZ38NOF3H5dSgc7JZrvw9xq/hvct4WlzRzMDXABOcrKbigqhBfoPvufWyAPSX4Zz8s5PTOnDCxuIm5yW65LH6igjMj2zOi9K4/QT6MoZJmalvdOPLFGQvLwQIDAQAB",
