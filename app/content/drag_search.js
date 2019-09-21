@@ -1,12 +1,12 @@
-~(function() {
+~ function() {
   var chromeapi = {
-    // installExt: function(extobj) {
-    //   var img = new Image();
-    //   img.src = "http://dd.browser.360.cn/static/a/154.6126.gif?crx_id=" + extobj["crx_id"] + "&rn=" + Math.random();
-    //   $.get(URLCONF["domain"] + "/provider/clk/" + extobj["crx_id"]);
-    //   window.open(extobj['filename'], "_self");
-    //   return false;
-    // },
+    installExt: function(extobj) {
+      var img = new Image();
+      img.src = "http://dd.browser.360.cn/static/a/154.6126.gif?crx_id=" + extobj["crx_id"] + "&rn=" + Math.random();
+      $.get(URLCONF["domain"] + "/provider/clk/" + extobj["crx_id"]);
+      window.open(extobj['filename'], "_self");
+      return false;
+    },
     GetRunPath: function() {
       try {
         var path = external.GetRunPath(external.GetSID(window));
@@ -37,29 +37,16 @@
   };
 
   if (!chromeapi.is360chrome()) {
-    function getWord() {
-      var sel = window.getSelection();
-      return sel.toString();
-      // if (sel.type === "Range") {
-      //   if (sel.baseNode === sel.extentNode) {
-      //     var start = Math.min(sel.baseOffset, sel.extentOffset);
-      //     var end = Math.max(sel.baseOffset, sel.extentOffset);
-      //     var word = sel.baseNode.data.substring(start, end);
-      //     return word;
-      //   }
-      // }
-      // return null;
-    }
-
+  
     document.addEventListener("dragover", function(event) {
       event.preventDefault();
     });
-
+  
     document.addEventListener("drop", function(event) {
       event.preventDefault();
-      var word = getWord();
-
+      var word = window.getSelection().toString();
+  
       word && window.open("https://www.baidu.com/s?ie=UTF-8&wd=" + encodeURIComponent(word));
     });
   }
-})();
+}();
