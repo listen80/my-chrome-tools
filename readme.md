@@ -12,4 +12,4 @@
 
 ### 下载链接
 
-<a href="https://ext.chrome.360.cn/webstore/detail/hmifjfaonaoopeklmegjfagoafhdgkkg" target="_blank"><u>前生360扩展中心</u></a>
+<a href="https://ext.chrome.360.cn/webstore/detail/hmifjfaonaoopeklmegjfagoafhdgkkg" target="_blank"><u>前往360扩展中心</u></a>
