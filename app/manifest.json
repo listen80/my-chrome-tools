@@ -32,7 +32,6 @@
   "background": {
     "scripts": ["background/background.js"]
   },
-  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC+vUHL61uBTiwO51y9xc5+AU0qGnDDDTa3xiuVkOLmEivnIvx1j1nZ38NOF3H5dSgc7JZrvw9xq/hvct4WlzRzMDXABOcrKbigqhBfoPvufWyAPSX4Zz8s5PTOnDCxuIm5yW65LH6igjMj2zOi9K4/QT6MoZJmalvdOPLFGQvLwQIDAQAB",
   "web_accessible_resources": ["*"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "permissions": [
