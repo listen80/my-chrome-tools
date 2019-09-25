@@ -50,6 +50,7 @@
       }
       let els = $(selector);
       if (els.length > 0) {
+        console.log('去除广告成功', selector)
         hide.append(els)
       }
     })
