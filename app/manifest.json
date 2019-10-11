@@ -16,7 +16,6 @@
       "js": [
         "lib/leaf.js",
         "lib/jquery.min.js",
-        "content/ads_killer.js",
         "content/cookie.js",
         "content/drag_search.js",
         "content/json.js"
