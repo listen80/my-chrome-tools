@@ -25,9 +25,6 @@
       "run_at": "document_end"
     }
   ],
-  "chrome_url_overrides": {
-    "newtab": "newtab/newtab.html"
-  },
   "background": {
     "scripts": ["background/background.js"]
   },

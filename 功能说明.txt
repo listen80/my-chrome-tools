@@ -1,6 +1,5 @@
 1. 格式化json数据
 2. 显示cookie
-3. 新的newtab
-4. Chrome 下拖拽搜索
+3. Chrome 下拖拽搜索
 
 注释: 主要是提供给自己及团队使用
