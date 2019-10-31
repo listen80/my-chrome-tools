@@ -17,7 +17,6 @@
         "lib/leaf.js",
         "lib/jquery.min.js",
         "content/cookie.js",
-        "content/drag_search.js",
         "content/json.js"
       ],
       "all_frames": false,
